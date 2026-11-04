@@ -1,0 +1,18 @@
+{
+  "environmentVariables": [
+    {
+      "name": "PATREON_ACCESS_TOKEN",
+      "description": "Patreon creator access token (Creator's Access Token from the Patreon developer portal).",
+      "isRequired": true,
+      "isSecret": true
+    },
+    {
+      "name": "TRANSPORT",
+      "description": "MCP transport. mcprack proxies stdio servers, so leave at stdio.",
+      "isRequired": false,
+      "isSecret": false,
+      "default": "stdio",
+      "choices": ["stdio", "sse", "streamable-http"]
+    }
+  ]
+}

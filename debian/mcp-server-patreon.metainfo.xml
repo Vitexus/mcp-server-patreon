@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.vitexsoftware.mcp-server-patreon</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>mcp-server-patreon</name>
+  <summary>MCP server for the Patreon API</summary>
+  <description>
+    <p>
+      An MCP (Model Context Protocol) server exposing the Patreon API v2
+      as tools for an LLM agent, built on fastmcp. It runs over stdio and
+      is registered into a local mcprack catalog by its companion package.
+    </p>
+    <p>
+      Tools fetch the authenticated user's identity, the creator's
+      campaigns with tiers, campaign members and posts, with cursor-based
+      pagination. All tools are read-only. The access token is read from
+      the environment and is never a tool parameter.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/Vitexus/mcp-server-patreon</url>
+  <provides>
+    <binary>mcp-server-patreon</binary>
+  </provides>
+</component>

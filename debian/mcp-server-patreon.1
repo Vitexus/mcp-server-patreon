@@ -1,0 +1,37 @@
+.TH MCP-SERVER-PATREON 1 "November 2026" "mcp-server-patreon 0.1.1" "User Commands"
+.SH NAME
+mcp-server-patreon \- MCP server for the Patreon API over stdio
+.SH SYNOPSIS
+.B mcp-server-patreon
+.RB [\|\-\-version \|]
+.RB [\|\-\-help \|]
+.SH DESCRIPTION
+.B mcp-server-patreon
+is a Model Context Protocol (MCP) server that gives an LLM agent read-only
+access to the Patreon API v2: the authenticated user's profile, campaigns
+with tiers, campaign members and posts, with cursor-based pagination.
+.PP
+It speaks MCP over standard input and output and is normally started by an
+MCP client or by mcprack rather than by hand.
+.SH OPTIONS
+.TP
+.B \-\-version
+Print the version and exit.
+.TP
+.B \-\-help
+Print a short help text and exit.
+.SH ENVIRONMENT
+.TP
+.B PATREON_ACCESS_TOKEN
+Patreon creator access token (required). Never passed as a tool parameter.
+.TP
+.B TRANSPORT
+MCP transport, default \fBstdio\fR.
+.SH FILES
+.TP
+.I /usr/share/mcp-server-patreon/server.json
+mcprack environment-variable manifest.
+.SH SEE ALSO
+.BR mcprack (1)
+.SH AUTHOR
+Upstream: Rishabh Dogra. Debian packaging: Vitezslav Dvorak <info@vitexsoftware.cz>.

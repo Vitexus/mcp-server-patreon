@@ -9,12 +9,13 @@ keywords = ["patreon", "mcp", "model-context-protocol", "claude", "ai", "creator
 readme = "README.md"
 dependencies = [
     "httpx>=0.28.1",
-    "mcp[cli]>=1.8.0",
+    "fastmcp>=4.1.4",
     "pydantic>=2.11.4",
     "python-dotenv>=1.1.0",
 ]
 
 [project.scripts]
+mcp-server-patreon = "patreon_mcp_server.server:main"
 patreon-mcp-server = "patreon_mcp_server.server:main"
 
 [project.urls]

@@ -1,0 +1,51 @@
+Source: mcp-server-patreon
+Section: python
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ appstream,
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-hatchling,
+Standards-Version: 4.7.0
+Homepage: https://github.com/Vitexus/mcp-server-patreon
+Vcs-Git: https://github.com/Vitexus/mcp-server-patreon.git
+Vcs-Browser: https://github.com/Vitexus/mcp-server-patreon
+Rules-Requires-Root: no
+
+Package: mcp-server-patreon
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-dotenv (>= 1.0),
+ python3-fastmcp (>= 4.1.4),
+ python3-httpx (>= 0.28),
+ python3-pydantic (>= 2.7),
+Provides: patreon-mcp-server
+Description: MCP server for the Patreon API over stdio
+ Model Context Protocol (MCP) server that gives an LLM agent read-only
+ access to the Patreon API v2: the authenticated user's identity, the
+ creator's campaigns with tiers, campaign members (patrons) and posts,
+ with cursor-based pagination.
+ .
+ Runs over stdio. The Patreon creator access token is read from the
+ PATREON_ACCESS_TOKEN environment variable and is never a tool
+ parameter; patron e-mail addresses are not fetched. Ships the mcprack
+ environment-variable manifest at
+ /usr/share/mcp-server-patreon/server.json; the upstream binary name
+ patreon-mcp-server is also installed.
+
+Package: mcprack-mcp-server-patreon
+Architecture: all
+Depends:
+ ${misc:Depends},
+ mcprack (>= 1.5.4),
+ mcp-server-patreon (= ${binary:Version}),
+Description: Registers Patreon MCP server into mcprack catalog
+ Companion package for mcp-server-patreon. Installing it registers
+ the mcp-server-patreon binary as an available MCP server in the local
+ mcprack instance; removing it unregisters it again.

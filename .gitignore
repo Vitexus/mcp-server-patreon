@@ -6,4 +6,13 @@ __pycache__/
 dist/
 mcp-publisher*
 .mcpregistry_*
-server.json
+/server.json
+.pybuild/
+debian/.debhelper/
+debian/*.debhelper.log
+debian/*.substvars
+debian/debhelper-build-stamp
+debian/files
+debian/mcp-server-patreon/
+debian/mcprack-mcp-server-patreon/
+debian/*.debhelper

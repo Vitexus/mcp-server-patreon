@@ -1,0 +1,11 @@
+mcp-server-patreon (0.1.1-1) unstable; urgency=medium
+
+  * Initial Debian packaging of the server as mcp-server-patreon, with the
+    mcprack-mcp-server-patreon companion package that self-registers the
+    stdio server into a local mcprack catalog on install and unregisters
+    it on removal.
+  * Switch from mcp.server.fastmcp (removed in mcp 2.x) to fastmcp >= 4.1.4.
+  * Add mcp-server-patreon console script (patreon-mcp-server kept) and
+    --version/--help handling that does not require a token.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Wed, 04 Nov 2026 11:33:49 +0100

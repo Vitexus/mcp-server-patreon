@@ -1,0 +1,13 @@
+#!/bin/sh
+# DEP-8 autopkgtest: exercise the *installed* package.
+set -e
+mcp-server-patreon --version
+mcp-server-patreon --help >/dev/null
+patreon-mcp-server --version
+PATREON_ACCESS_TOKEN=dummy python3 -c "
+import asyncio
+from patreon_mcp_server.mcp_server import mcp
+import patreon_mcp_server.tools
+tools = asyncio.run(mcp.list_tools())
+assert len(tools) == 6, len(tools)
+"

@@ -11,3 +11,6 @@ import patreon_mcp_server.tools
 tools = asyncio.run(mcp.list_tools())
 assert len(tools) == 6, len(tools)
 "
+
+# MCP-level smoke via the mcprack CLI: handshake + tools/resources/prompts list
+PATREON_ACCESS_TOKEN=dummy mcprack server probe /usr/bin/mcp-server-patreon

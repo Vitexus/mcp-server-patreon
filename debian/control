@@ -43,7 +43,7 @@ Package: mcprack-mcp-server-patreon
 Architecture: all
 Depends:
  ${misc:Depends},
- mcprack (>= 1.5.4),
+ mcprack (>= 1.6.0),
  mcp-server-patreon (= ${binary:Version}),
 Description: Registers Patreon MCP server into mcprack catalog
  Companion package for mcp-server-patreon. Installing it registers
